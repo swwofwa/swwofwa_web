@@ -1,0 +1,167 @@
+/*
+Theme Name: swwwwa 
+Template: twentytwentyfive
+Theme URI: ''
+Author: Fiona Evans
+Author URI: https://www.fionahevans.com
+Description: Theme for The Society of Women Writers WA website
+Requires at least: 6.7
+Tested up to: 6.8
+Requires PHP: 7.2
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyfive
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
+*/
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: .1em;
+}
+
+/* Focus styles */
+:where(.wp-site-blocks *:focus) {
+	outline-width: 2px;
+	outline-style: solid;
+}
+
+/* Increase the bottom margin on submenus, so that the outline is visible. */
+.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+}
+
+/* Increase the outline offset on the parent menu items, so that the outline does not touch the text. */
+.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+}
+
+/* Remove outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
+.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+}
+
+/*
+ * Progressive enhancement to reduce widows and orphans
+ * https://github.com/WordPress/gutenberg/issues/55190
+ */
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+	text-wrap: pretty;
+}
+
+/* h1 = page title (wp-block-heading)*/
+/* Change sizes Appearance > Editor > Styles > Edit Styles > Typography > Headings > Custom */
+h1{
+	font-size: 30px;
+	font-weight:bold;
+	color: #000000;
+}
+
+h2{
+	font-size: 24px;
+	font-weight:bold;
+	color: #703156;
+	padding-top: 30px;
+}
+/*
+#wp-block-group h2 h2.wp-block-heading{
+	font-size: 14px;
+	/*font-weight:bold;*/
+	color: #703156;
+	padding: 3.5em 2.375em important!;
+}*/
+
+
+
+/*
+ * Change the position of the more block on the front, by making it a block level element.
+ * https://github.com/WordPress/gutenberg/issues/65934
+*/
+.more-link {
+	display: block;
+}
+
+/* To keep images inside the content area */
+@media screen and (min-width: 810px) {
+	.full-width .site-content img.size-medium.alignright {
+		margin-right: 0;
+	}
+	.full-width .site-content img.size-medium.align-left {
+		margin-left: 0;
+	}
+}
+
+/* White background in inner part of the pages */
+
+/* Page title 
+.wp-block-post-title{
+	background: #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+.wp-block-post-content{
+	background: #FFFFFF;
+	background-color: #FFFFFF;
+}*/
+
+/* Gallery block
+.wp-block-gallery {
+	background: #FFFFFF;
+	background-color: #FFFFFF;
+} */
+
+/* Image in gallery block - not working */
+.wp-block-image {
+	defaultDuotone: false;
+	filter: {
+		duotone: false;
+	};
+}
+
+/* Image caption in gallery block */
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption,
+    .wp-caption-text {
+        font-size: medium; 
+    }
+	
+/* Line in footer */
+ .wp-block-separator.custom-width {
+	 box-sizing: contentSize;
+	 color: #C89C6D;
+	 opacity: 0.5;
+	 border-width: 3px;
+	 border-radius: 10px;
+     max-width: 900px;
+	 /*max-width: 85%;*/
+     margin-left: auto; /* Centers the separator if it's narrower than its container */
+     margin-right: auto; /* Centers the separator if it's narrower than its container */
+    }
+	
+	
+p.curved-border {
+	/*background: rgba(0, 0, 0, 0.8);
+	color: rgba(200, 156, 109, 0.5);
+	font-weight: bold; */
+	border: 5px solid rgba(200, 156, 109, 0.5);
+	padding: 10px; 
+	border-radius: 10px;
+    max-width: 885px;
+    margin-left: auto; /* Centers the separator if it's narrower than its container */
+    margin-right: auto; /* Centers the separator if it's narrower than its container */
+    }
+	
+/* Button */
+.wp-element-button {
+	color: #F6CFF4;
+	border: 1px solid #000;
+	background: #000000;
+}
+
+.wp-element-button:hover, .wp-block-button__link:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
