@@ -1,1 +1,1 @@
-Static Website
+Society of Women Writers WA Static Website
